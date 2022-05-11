@@ -27,4 +27,4 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3.1.2
       - name: Run python script
-        run: python ./test-runner-2/createtext.py
+        run: python ./createtext.py

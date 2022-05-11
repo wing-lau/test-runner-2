@@ -28,4 +28,4 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3.1.2
       - name: Run createtext.py
-        run: ./createtext.py
+        run:  createtext.py

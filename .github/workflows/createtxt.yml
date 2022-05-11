@@ -32,4 +32,4 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: example-text-file
-          path: .
+          path: ./example.txt

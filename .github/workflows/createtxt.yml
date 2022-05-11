@@ -24,7 +24,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Setup python and run script
       - name: Setup Python
         uses: actions/setup-python@3.1.2
       - name: Run createtext.py

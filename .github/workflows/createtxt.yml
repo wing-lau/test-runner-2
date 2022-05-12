@@ -34,13 +34,5 @@ jobs:
           name: example-text-file
           path: ./example.txt
         # Testing post Artifact as Comment on PR
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'PR' + context.issue.number + context.artifact
-            })
-          
+        
+  

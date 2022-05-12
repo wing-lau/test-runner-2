@@ -33,3 +33,7 @@ jobs:
         with:
           name: example-text-file
           path: ./example.txt
+        # Testing post Artifact as Comment on PR
+      - name: workflow artifact pull request comment
+        uses: tonyhallett/artifacts-url-comments@v1.1.0
+          

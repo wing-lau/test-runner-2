@@ -37,6 +37,7 @@ jobs:
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:
+          issue-number: 1
           body: This is a comment ${{ steps.generate_file.outputs }}
         
           

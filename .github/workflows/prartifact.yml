@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        uses: montogeek/github-action-comment-artifacts@1.0
+       - name: workflow artifact pull request comment
+         uses: tonyhallett/artifacts-url-comments@v1.1.0
           

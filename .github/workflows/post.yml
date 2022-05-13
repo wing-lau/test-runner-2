@@ -12,11 +12,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    #- name: Create or Update Comment
-     # uses: peter-evans/create-or-update-comment@v2.0.0
-    - env: 
-        DATA : ${{ github.event.client_payload.text }}
-        run: echo $DATA
-      #with:
-       # issue-number: 1
-        #body: $DATA
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v2.0.0
+        with:
+          issue-number: 1
+          body: This is a comment

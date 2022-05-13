@@ -18,7 +18,7 @@ jobs:
 #          issue-number: ${{ github.event.number }}
 #          body: This is a comment
 
-     - uses: actions/github-script@v3
+     - uses: actions/github-script@v6
        with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |

@@ -19,20 +19,13 @@ jobs:
         uses: actions/setup-python@v3.1.2
       - name: Run python script
         run: python ./createtext.py
-      - id: get-comment-body
+      - id: get-file-body
         run: |
           body="$(cat example.txt)"
           echo "::set-output name=body::$body"
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:
-          issue-number: 1
-          body: ${{ steps.get-comment-body.outputs.body }}
-          
-          #${{ github.event.number }}
-               
-  #  steps:
-   # - name: View context attributes
-   #   uses: actions/github-script@v6
-   #   with:
-   #    script: console.log(context)
+          issue-number: 2
+          body: ${{ steps.get-file-body.outputs.body }}
+      

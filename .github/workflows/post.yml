@@ -1,9 +1,9 @@
 name: local push
 
 on: 
-  #workflow_dispatch:
-  repository_dispatch:
-    types: post-comment 
+  workflow_dispatch:
+  #repository_dispatch:
+   # types: post-comment 
 
 jobs:
   # This workflow contains a single job called "post-comment"

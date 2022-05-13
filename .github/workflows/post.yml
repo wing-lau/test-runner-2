@@ -14,9 +14,9 @@ jobs:
     steps:
     #- name: Create or Update Comment
      # uses: peter-evans/create-or-update-comment@v2.0.0
-      env: 
+    - env: 
         DATA : ${{ github.event.client_payload.text }}
-      run: echo $DATA
+        run: echo $DATA
       #with:
        # issue-number: 1
         #body: $DATA

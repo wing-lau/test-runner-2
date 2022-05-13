@@ -22,7 +22,7 @@ jobs:
       - id: get-comment-body
         run: |
           body="$(cat example.txt)"
-          echo ""::set-output name=body::$body"
+          echo "::set-output name=body::$body"
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:

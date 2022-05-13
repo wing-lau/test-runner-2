@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: example-text-file
-          path: ./example.txt
+          path: ./example.log
        # Testing post Artifact as Comment on PR
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0

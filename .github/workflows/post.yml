@@ -12,8 +12,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Create or Update Comment
-        uses: peter-evans/create-or-update-comment@v2.0.0
-        with:
-          issue-number: ${{ github.event.number }}
-          body: This is a comment
+#      - name: Create or Update Comment
+#        uses: peter-evans/create-or-update-comment@v2.0.0
+#        with:
+#          issue-number: ${{ github.event.number }}
+#          body: This is a comment
+
+     - uses: actions/github-script@v3
+       with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })

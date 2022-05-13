@@ -1,10 +1,12 @@
 name: manually re-running actions
 
-on: repository_dispatch
+on: 
+  repository_dispatch:
+    types: post-comment 
 
 jobs:
-  # This workflow contains a single job called "create-file"
-  create-file:
+  # This workflow contains a single job called "post-comment"
+  post-comment:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 

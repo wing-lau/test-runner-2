@@ -17,9 +17,11 @@ jobs:
 #        with:
 #          issue-number: ${{ github.event.number }}
 #          body: This is a comment
-
-     - uses: actions/github-script@v6
-       with:
+      - uses: actions/checkout@v2
+      - name: Set environment variables
+        run: sleep 1
+      - uses: actions/github-script@v6
+        with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.createComment({

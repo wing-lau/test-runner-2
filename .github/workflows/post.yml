@@ -23,11 +23,11 @@ jobs:
                
     steps:
       - uses: actions/github-script@v6
-        env:
-          FIRST_NAME: Wing
-          LAST_NAME: Lau
         with:
           script: |
-            const { FIRST_NAME, LAST_NAME } = process.env
+            github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.repo,
+            body: 'huh'
+            })
 
-            console.log(`Hello ${FIRST_NAME} ${LAST_NAME}`)

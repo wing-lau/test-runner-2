@@ -12,20 +12,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      # Setup python and run script
-      - name: Setup Python
-        uses: actions/setup-python@v3.1.2
-      - name: Run python script
-        run: python ./createtext.py
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: example-text-file
-          id: generate_file
-          path: ./example.txt
-       # Testing post Artifact as Comment on PR
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:

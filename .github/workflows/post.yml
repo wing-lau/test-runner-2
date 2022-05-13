@@ -13,6 +13,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v3
+      # Setup python and run script
+      - name: Setup Python
+        uses: actions/setup-python@v3.1.2
+      - name: Run python script
+        run: python ./createtext.py
       - id: get-comment-body
         run: |
           body="$(cat example.txt)"

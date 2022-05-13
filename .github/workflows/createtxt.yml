@@ -31,7 +31,6 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: example-text-file
-          id: generate_file
           path: ./example.txt
        # Testing post Artifact as Comment on PR
       - name: Create or Update Comment

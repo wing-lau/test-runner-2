@@ -21,7 +21,7 @@ jobs:
         run: python ./createtext.py
       - id: get-file-body
         run: |
-          body="$(cat example.txt)"
+          body="$(cat example.log)"
           echo "::set-output name=body::$body"
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0

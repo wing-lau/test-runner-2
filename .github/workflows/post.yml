@@ -20,14 +20,14 @@ jobs:
 #          body: This is a comment
           
           #${{ github.event.number }}
-          
+               
     steps:
       - uses: actions/github-script@v6
+        env:
+          FIRST_NAME: Wing
+          LAST_NAME: Lau
         with:
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '👋 Thanks for reporting!'
-            })
+            const { FIRST_NAME, LAST_NAME } = process.env
+
+            console.log(`Hello ${FIRST_NAME} ${LAST_NAME}`)

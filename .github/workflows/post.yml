@@ -13,11 +13,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - id: get-comment-body
+        run: |
+          body="$(cat example.txt)"
+          echo ""::set-output name=body::$body"
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:
           issue-number: 1
-          body: This is a comment
+          body: ${{ steps.get-comment-body.outputs.body }}
           
           #${{ github.event.number }}
                
